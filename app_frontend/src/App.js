@@ -106,9 +106,10 @@ function App() {
           </button>
 
           {/* Display API Response */}
+          {/* Display API Response */}
           {apiResponse && (
             <div style={{ 
-              marginBottom: showNormalMsg ? '1.2rem' : 0,
+              marginBottom: (apiResponse.plan === 'normal') ? '1.2rem' : 0,
               color: 'var(--text-primary)',
               fontSize: '1rem'
             }}>
@@ -117,7 +118,7 @@ function App() {
           )}
 
           {/* Conditional Message for 'normal' plan */}
-          {showNormalMsg && (
+          {apiResponse && apiResponse.plan === 'normal' && (
             <div
               style={{
                 marginTop: 0,
